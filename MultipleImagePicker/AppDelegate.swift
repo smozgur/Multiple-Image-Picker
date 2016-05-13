@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  MultipleImagePicker
+//  ImagePicker
 //
 //  Created by Suat Ozgur on 5/13/16.
 //  Copyright © 2016 BatCoder. All rights reserved.

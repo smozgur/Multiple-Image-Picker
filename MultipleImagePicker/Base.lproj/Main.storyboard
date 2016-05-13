@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MultipleImagePicker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,79 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vXc-HF-mSd">
+                                <rect key="frame" x="0.0" y="20" width="600" height="178.5"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k6R-uJ-e3M">
+                                <rect key="frame" x="0.0" y="198.5" width="600" height="179"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9R-66-6dw">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Image 1" id="Cn5-NI-bpj">
+                                        <connections>
+                                            <action selector="picker:" destination="BYZ-38-t0r" id="zda-Mp-ymf"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="XG3-1q-vmn"/>
+                                    <barButtonItem tag="2" title="Image 2" id="gRm-q0-4JO">
+                                        <connections>
+                                            <action selector="picker:" destination="BYZ-38-t0r" id="pwH-k6-oxS"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="EwZ-cj-Yd8"/>
+                                    <barButtonItem tag="3" title="Image 3" id="swb-bb-3UL">
+                                        <connections>
+                                            <action selector="picker:" destination="BYZ-38-t0r" id="UbP-FR-f9W"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3MX-cH-6W8">
+                                <rect key="frame" x="0.0" y="377.5" width="600" height="178.5"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="x9R-66-6dw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0Hj-yn-R1L"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="x9R-66-6dw" secondAttribute="bottom" id="0cp-Mz-Pud"/>
+                            <constraint firstItem="3MX-cH-6W8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3FB-bn-tVJ"/>
+                            <constraint firstItem="3MX-cH-6W8" firstAttribute="height" secondItem="k6R-uJ-e3M" secondAttribute="height" id="4Py-MK-LOJ"/>
+                            <constraint firstItem="k6R-uJ-e3M" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Exd-2V-3i4"/>
+                            <constraint firstItem="3MX-cH-6W8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="H1J-aU-Vfu"/>
+                            <constraint firstItem="vXc-HF-mSd" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:3" id="IQA-QP-IWj"/>
+                            <constraint firstAttribute="trailing" secondItem="x9R-66-6dw" secondAttribute="trailing" id="QCm-Dp-DoR"/>
+                            <constraint firstItem="3MX-cH-6W8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="YsX-kI-6ie"/>
+                            <constraint firstItem="k6R-uJ-e3M" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="ZSc-Ea-SJn"/>
+                            <constraint firstItem="k6R-uJ-e3M" firstAttribute="top" secondItem="vXc-HF-mSd" secondAttribute="bottom" id="dUb-DS-SRK"/>
+                            <constraint firstItem="3MX-cH-6W8" firstAttribute="height" secondItem="k6R-uJ-e3M" secondAttribute="height" id="eng-eC-rjO"/>
+                            <constraint firstItem="vXc-HF-mSd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kIY-wD-hD3"/>
+                            <constraint firstItem="k6R-uJ-e3M" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="oFe-Ju-fI9"/>
+                            <constraint firstItem="k6R-uJ-e3M" firstAttribute="height" secondItem="vXc-HF-mSd" secondAttribute="height" id="q4R-SW-aIy"/>
+                            <constraint firstItem="x9R-66-6dw" firstAttribute="top" secondItem="3MX-cH-6W8" secondAttribute="bottom" id="s32-2x-Y4b"/>
+                            <constraint firstItem="3MX-cH-6W8" firstAttribute="top" secondItem="k6R-uJ-e3M" secondAttribute="bottom" id="sUD-Cs-HoZ"/>
+                            <constraint firstItem="vXc-HF-mSd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="tEE-fs-TEX"/>
+                            <constraint firstItem="vXc-HF-mSd" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="zB5-9y-FKD"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="IQA-QP-IWj"/>
+                                <exclude reference="ZSc-Ea-SJn"/>
+                                <exclude reference="4Py-MK-LOJ"/>
+                                <exclude reference="H1J-aU-Vfu"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="picture1" destination="vXc-HF-mSd" id="XkD-u0-Lhb"/>
+                        <outlet property="picture2" destination="k6R-uJ-e3M" id="FCB-v0-TdO"/>
+                        <outlet property="picture3" destination="3MX-cH-6W8" id="jYc-bz-RZp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="364"/>
         </scene>
     </scenes>
 </document>
